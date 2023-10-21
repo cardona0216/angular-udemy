@@ -1,0 +1,31 @@
+<p>listado de heroes</p>
+
+
+<!-- vamos ausar la primera directiva de control el 
+    *ngfor
+-->
+
+
+<!-- usaremos el ng-template y el else -->
+<button (click)="removerheroe()">
+    remover heroe
+</button>
+<div *ngIf="heroeborrad; else noborrado">
+    
+    <h3>heroe borrado:<small>{{heroeborrad}}</small></h3>
+</div>
+<!-- el ng-templete es algo propio de angular
+este se usa solamente en angular 
+
+-elng template es un compoente propio de angular
+#esto es una referencia local
+-->
+<ng-template #noborrado>
+    <h3>no haz borrado nada..</h3>
+</ng-template>
+
+<ul>
+    <li *ngFor="let heroe of heroes;let i = index">
+            {{i+1}}-{{heroe}}
+    </li>
+</ul>

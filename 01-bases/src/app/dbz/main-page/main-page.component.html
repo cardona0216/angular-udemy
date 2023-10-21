@@ -1,0 +1,74 @@
+<p>Dragon Ball Z</p>
+<hr>
+<div class="row">
+
+    <div class="col">
+        <!-- vamos a trabajar con @input esto es para comunicarnos entre componentes hijos
+        es poco enrredado per lo vamos a lograr entender este concepto -->
+
+        <app-personajes >
+
+        </app-personajes>
+        <!-- <h3>Personajes</h3>
+        <hr>
+        <ul>
+            <li *ngFor="let personaje of personajes">
+               {{personaje.nombre}}-{{personaje.poder | number}}
+            </li>
+            36037612736
+        </ul> -->
+    </div>
+
+    <div class="col">
+        <!-- aqui vamos a trabajar con el @uotput con el eventemiter osea eschuchaos el evento -->
+        <app-agregar 
+        [nuevo]="nuevo"
+        
+        ></app-agregar>
+    </div>
+
+</div>
+<!-- <h3>Agregar {{nuevo.nombre}}</h3> -->
+        
+<!-- <hr> -->
+<!-- cada evento que se dispara puede sercivir un evento esto se  recibe con un $event -->
+<!-- hay otra forma de trabajr con los formularios en anugular es con los formModule -->
+
+<!-- angular dispone de un amodulo cunado deseamos trabakr con formularios  hay dos formas
+de trabajar con los formularios en angular los fromularios reactivos y los formularios normales
+-->
+<!-- <form (ngSubmit)="agregar()">
+        <!-- vamos atrbajar con los inputo con ngmodel -->
+
+        <!-- con los [value] le digo a angular que tengo del lado 
+        del ts hay alguna varible o propiedad que quiero enlazar
+        recordar los ( son para emitir o eschuchar eventos) y los [ son estableces alguna propiedad al objeto
+         este caso es al input al que estamos estableciendo la propiedad]
+    
+    -->
+    <!-- <input 
+        type="text"
+        placeholder="nombre"
+        name="nombre"
+        [(ngModel)]="nuevo.nombre"
+        > -->
+        <!-- este es el concepto de two way data building
+        osea recive y emite propiedades [(ngModel)] -->
+        <!-- //esta es un amanera de hacerlo pero es un poco tediosa haverlo asi 
+        lo que vamos a hacer es usar el ngModel en este se combinan las dos cosas el [()] con esto
+    lo que hacemos es que pasamos el valor de la propiedad en el ts con los [ ] y eschuchamos el evento qye 
+        que se esta emitiendo () esto se conoce como bananainbox
+-->
+        <!-- [value]="nuevo.nombre" 
+        (input)="cambiarnombre($event)" -->
+    <!-- <input
+     type="number"
+     placeholder="Poder"
+     name="poder"
+     [(ngModel)]="nuevo.poder" > -->
+        <!-- con los () dentro de un elemto html es que estoy escuvhando un evento
+         -->
+    <!-- <button type="submit">
+        Agregar
+    </button> -->
+<!-- </form> --> 
